@@ -1,0 +1,38 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x client/gradlew || true
+
+    - name: Build with Gradle
+      working-directory: ./client
+      run: |
+        # If gradlew is missing, generate a wrapper first
+        if [ ! -f gradlew ]; then
+          gradle wrapper --gradle-version 8.2
+        fi
+        ./gradlew assembleDebug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: RatClient-APK
+        path: client/app/build/outputs/apk/debug/app-debug.apk
