@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: rat-server
+    runtime: node
+    rootDir: server
+    buildCommand: yarn install
+    startCommand: yarn start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
