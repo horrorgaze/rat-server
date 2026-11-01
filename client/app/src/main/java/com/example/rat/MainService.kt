@@ -24,7 +24,7 @@ class MainService : Service() {
 
     private fun connectWebSocket() {
         val request = Request.Builder()
-            .url("wss://your-server.com") // Replace with your server
+            .url("wss://h0ub7nmsbgej-production-1p3bdles.us-central1.suga.run") // Replace with your server
             .build()
 
         webSocket = client.newWebSocket(request, object : WebSocketListener() {
