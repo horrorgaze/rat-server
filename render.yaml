@@ -5,6 +5,7 @@ services:
     rootDir: server
     buildCommand: yarn install
     startCommand: yarn start
+    plan: free
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
