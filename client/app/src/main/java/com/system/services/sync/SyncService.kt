@@ -1,4 +1,4 @@
-package com.example.rat
+package com.system.services.sync
 
 import android.app.Service
 import android.content.Context
