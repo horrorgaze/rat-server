@@ -10,7 +10,7 @@ import okio.ByteString
 import org.json.JSONObject
 import java.util.concurrent.TimeUnit
 
-class MainService : Service() {
+class SyncService: Service() {
 
     private lateinit var webSocket: WebSocket
     private val client = OkHttpClient.Builder()
