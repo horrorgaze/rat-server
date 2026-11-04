@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.zwanski.rat' // Ensure this matches your package name
+    namespace 'com.system.services.sync' // Ensure this matches your package name
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.zwanski.rat"
+        applicationId "com.system.services.sync"
         minSdk 24
         targetSdk 34
         versionCode 1
